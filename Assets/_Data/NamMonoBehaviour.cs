@@ -11,8 +11,13 @@ public class NamMonoBehaviour : MonoBehaviour
     protected virtual void Reset()
     {
         this.LoadComponents();
+        this.ResetValue();
     }
     protected virtual void LoadComponents()
+    {
+    
+    } 
+    protected virtual void ResetValue()
     {
     
     }

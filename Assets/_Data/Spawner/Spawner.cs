@@ -52,8 +52,8 @@ public abstract class Spawner : NamMonoBehaviour
         }
         //Transform newPrefab = Instantiate(prefab, spawnPos, rotation);
         Transform newPrefab = this.GetObjectFromPool(prefab);
-        newPrefab.SetPositionAndRotation(spawnPos, rotation); // chỉnh lại về vị trí ban đầu
-        newPrefab.parent = this.holder;
+        newPrefab.SetPositionAndRotation(spawnPos, rotation); // chỉnh lại về vị trí ban đầu sau khi pool
+        newPrefab.parent = this.holder; // instance bullet and get in parent of holder
         return newPrefab;
 
     }   

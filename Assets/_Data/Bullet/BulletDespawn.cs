@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class BulletDespawn : DespawnByDistance
 {
-    protected override void LoadComponents()
-    {
-        this.LoadCamera();
-    }
+    //protected override void LoadComponents()
+    //{
+    //    this.LoadCamera();
+    //}
     protected override void DespawnObject()
     {
         //base.DespawnObject();

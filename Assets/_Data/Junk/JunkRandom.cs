@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class JunkRandom : NamMonoBehaviour
 {
-    [SerializeField] protected JunkCtrl junkCtrl;
+    [SerializeField] protected JunkSpawnerCtrl junkCtrl;
 
     protected override void LoadComponents()
     {
@@ -15,7 +15,7 @@ public class JunkRandom : NamMonoBehaviour
     protected virtual void LoadJunkCtrl()
     {
         if (this.junkCtrl != null) return;
-        this.junkCtrl = GetComponent<JunkCtrl>();
+        this.junkCtrl = GetComponent<JunkSpawnerCtrl>();
         Debug.Log(transform.name + ": JunkCtrl", gameObject);
     }
 
@@ -30,6 +30,6 @@ public class JunkRandom : NamMonoBehaviour
         Quaternion rot = transform.rotation;
         Transform obj = this.junkCtrl.JunkSpawner.Spawn(JunkSpawner.meteoriteOne, pos, rot);
         obj.gameObject.SetActive(true);
-        Invoke(nameof(this.JunkSpawning), 1f);
+        Invoke(nameof(this.JunkSpawning), 2f);
     }
 }

@@ -22,10 +22,10 @@ public class NamMonoBehaviour : MonoBehaviour
     
     }
 
-    //protected virtual void Update()
-    //{
-
-    //}
+    protected virtual void OnEnable()
+    {
+        
+    }
     protected virtual void Start()
     {
         

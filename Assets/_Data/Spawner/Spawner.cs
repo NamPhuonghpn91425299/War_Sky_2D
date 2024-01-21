@@ -5,6 +5,9 @@ using UnityEngine;
 public abstract class Spawner : NamMonoBehaviour
 {
     [SerializeField] protected Transform holder;
+    [SerializeField] protected int spawnerCount=0;
+    public int SpawerCount => spawnerCount; 
+
     [SerializeField] protected List<Transform> prefabs;
     [SerializeField] protected List<Transform> poolObjs;
 
@@ -51,16 +54,22 @@ public abstract class Spawner : NamMonoBehaviour
             return null;
         }
         //Transform newPrefab = Instantiate(prefab, spawnPos, rotation);
+
+        return this.Spawn(prefab,spawnPos,rotation);
+    }   
+    public virtual Transform Spawn(Transform prefab, Vector3 spawnPos, Quaternion rotation)
+    {
         Transform newPrefab = this.GetObjectFromPool(prefab);
         newPrefab.SetPositionAndRotation(spawnPos, rotation); // chỉnh lại về vị trí ban đầu sau khi pool
         newPrefab.parent = this.holder; // instance bullet and get in parent of holder
+        this.spawnerCount++;
         return newPrefab;
-
     }   
     protected virtual Transform GetObjectFromPool(Transform prefab) // tái sử dụng lại object đã dùng
     {
         foreach (Transform poolObj in this.poolObjs)
         {
+            if (poolObj == null) continue;
             if (poolObj.name == prefab.name)
             {
                 this.poolObjs.Remove(poolObj);
@@ -75,6 +84,7 @@ public abstract class Spawner : NamMonoBehaviour
     {
         this.poolObjs.Add(obj);
         obj.gameObject.SetActive(false);
+        this.spawnerCount--;
     }
     public virtual Transform GetPrefabByName(string prefabName)
     {
@@ -83,5 +93,10 @@ public abstract class Spawner : NamMonoBehaviour
             if (prefab.name == prefabName) return prefab;
         }
         return null;
+    }
+    public virtual Transform RandomPrefab()
+    {
+        int rand = Random.Range(0,this.prefabs.Count);
+        return this.prefabs[rand];
     }
 }

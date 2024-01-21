@@ -8,9 +8,8 @@ public class BulletDespawn : DespawnByDistance
     //{
     //    this.LoadCamera();
     //}
-    protected override void DespawnObject()
+    public override void DespawnObject()
     {
-        //base.DespawnObject();
         BulletSpawner.Instance.Despawn(transform.parent);
     }
  

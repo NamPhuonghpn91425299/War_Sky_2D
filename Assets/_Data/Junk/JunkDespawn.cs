@@ -8,7 +8,7 @@ public class JunkDespawn : DespawnByDistance
     //{
     //    //this.LoadCamera();
     //}
-    protected override void DespawnObject()
+    public override void DespawnObject()
     {
         //base.DespawnObject();
         JunkSpawner.Instance.Despawn(transform.parent);

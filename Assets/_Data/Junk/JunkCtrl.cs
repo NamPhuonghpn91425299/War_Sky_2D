@@ -7,10 +7,18 @@ public class JunkCtrl : NamMonoBehaviour
     [SerializeField] protected Transform model;
     public Transform Model { get => model; }
 
+    [SerializeField] protected JunkDespawn junkDespawn;
+    public JunkDespawn JunkDespawn { get => junkDespawn; }  
+
+    [SerializeField] protected JunkSO junkSO;
+    public JunkSO JunkSO => junkSO;
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
         this.LoadModel();
+        this.LoadJunkDespawn();
+        this.LoadJunkSO();
     }
 
     protected virtual void LoadModel()
@@ -18,5 +26,18 @@ public class JunkCtrl : NamMonoBehaviour
         if (this.model != null) return;
         this.model = transform.Find("Model");
         Debug.Log(transform.name + " :LoadModel", gameObject);
+    }
+    protected virtual void LoadJunkDespawn()
+    {
+        if (this.junkDespawn != null) return;
+        this.junkDespawn = GetComponentInChildren<JunkDespawn>();
+        Debug.Log(transform.name + ": junkDespawn", gameObject);
+    }
+    protected virtual void LoadJunkSO()
+    {
+        if (this.junkSO != null) return;
+        string repath = "Junk/" + transform.name;
+        this.junkSO = Resources.Load<JunkSO>(repath);
+        Debug.LogWarning(transform.name + ": junkSO" + repath, gameObject);
     }
 }

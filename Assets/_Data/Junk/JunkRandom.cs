@@ -25,10 +25,14 @@ public class JunkRandom : NamMonoBehaviour
     }
     protected virtual void JunkSpawning()
     {
-        Transform ranPoint = this.junkCtrl.SpawnPoint.GetRandom(); // random positions from list points (Spawnpoint)
+        Transform ranPoint = this.junkCtrl.SpawnPoints.GetRandom();
+        // random positions from list points (Spawnpoint)
+        
         Vector3 pos = ranPoint.position;
+        pos.z = 0;
         Quaternion rot = transform.rotation;
-        Transform obj = this.junkCtrl.JunkSpawner.Spawn(JunkSpawner.meteoriteOne, pos, rot);
+        Transform prefab = this.junkCtrl.JunkSpawner.RandomPrefab();
+        Transform obj = this.junkCtrl.JunkSpawner.Spawn(prefab, pos, rot);
         obj.gameObject.SetActive(true);
         Invoke(nameof(this.JunkSpawning), 2f);
     }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "Ship", menuName = "ScriptableObjects/Ship")]
+[CreateAssetMenu(fileName = "Ship", menuName = "SO/Ship")]
 public class ShipSO : ScriptableObject
 {
-    public string junkName = "Ship";
+    public string shipName = "Ship";
     public int hpMax = 20;
 }

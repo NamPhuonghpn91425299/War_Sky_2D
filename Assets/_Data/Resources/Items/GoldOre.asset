@@ -9,13 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b45f95f672866d44bb57202ce197febc, type: 3}
-  m_Name: Meteorite_1
+  m_Script: {fileID: 11500000, guid: 4d33a7e5f918bd540a3e6a3514baeae9, type: 3}
+  m_Name: GoldOre
   m_EditorClassIdentifier: 
-  junkName: Meteorite_1
-  hpMax: 2
-  dropList:
-  - itemSO: {fileID: 11400000, guid: c093b8cdc2e9dc5468aa7f27eea91ca4, type: 2}
-    dropRate: 70000
-    dropMin: 0
-    dropMax: 0
+  itemCode: 2
+  itemName: GoldOre

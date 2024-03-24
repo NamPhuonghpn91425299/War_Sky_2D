@@ -40,4 +40,5 @@ public class JunkCtrl : NamMonoBehaviour
         this.junkSO = Resources.Load<JunkSO>(repath);
         Debug.LogWarning(transform.name + ": junkSO" + repath, gameObject);
     }
+
 }

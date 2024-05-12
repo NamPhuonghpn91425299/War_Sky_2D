@@ -10,7 +10,7 @@ public class Inventory : NamMonoBehaviour
     protected override void Start()
     {
         base.Start();
-        this.AddItem(Itemcode.IronOre, 3);
+        this.AddItem(Itemcode.IronOre, 0);
     }
     public virtual bool AddItem(Itemcode itemcode, int addCount)
     {

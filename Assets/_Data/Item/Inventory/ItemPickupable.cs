@@ -1,15 +1,15 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
 
 [RequireComponent(typeof(SphereCollider))]
-public class ItemPickupable : JunkAbstract
+public class ItemPickupable : ItemAbstract
 {
     [Header("ItemPickupable")]
     [SerializeField] protected SphereCollider _collider;
 
-    public static Itemcode String2ItemCode(string itemname)
+    public static Itemcode String2ItemCode(string itemname) // chuyển chuỗi string thành dạng enum
     {
         try
         {
@@ -47,7 +47,7 @@ public class ItemPickupable : JunkAbstract
     }
     public virtual void Picked()
     {
-        this.junkCtrl.JunkDespawn.DespawnObject();
+        this.ItemCtrl.ItemDespawn.DespawnObject();
     }
 
 }

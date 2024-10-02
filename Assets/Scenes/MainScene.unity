@@ -440,7 +440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8089ba9b3641f24d9109a264b175d5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
+  inventory: {fileID: 1438179171}
 --- !u!1 &259913829
 GameObject:
   m_ObjectHideFlags: 0
@@ -880,6 +880,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -895,6 +896,21 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9b459682537198489a3722a063947d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 235806443}
+  smoothSpeed: 0.125
+  offset: {x: 0, y: 0, z: 0}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -918,7 +934,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.1
   far clip plane: 1000
   field of view: 60
   orthographic: 1
@@ -947,7 +963,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 882514642}
   m_RootOrder: 0
@@ -1306,10 +1322,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 667502258}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67867b420bebe704f98224c7ca46d012, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ff44f59dc2624047bb05631b742db7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disLimit: 20
+  disLimit: 21
   distance: 0
   maincam: {fileID: 519420031}
 --- !u!1 &749879506
@@ -1952,10 +1968,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 937566205}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67867b420bebe704f98224c7ca46d012, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ff44f59dc2624047bb05631b742db7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disLimit: 20
+  disLimit: 21
   distance: 0
   maincam: {fileID: 519420031}
 --- !u!4 &937566207
@@ -2381,7 +2397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6ee9aa44d781af40960ac6212e0f4ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  junkCtrl: {fileID: 0}
+  itemCtrl: {fileID: 1761099255}
   _collider: {fileID: 1294669727}
 --- !u!135 &1294669727
 SphereCollider:
@@ -2639,12 +2655,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1510014033}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65cb0c8798ac00142ba4b39446d8ea51, type: 3}
+  m_Script: {fileID: 11500000, guid: ac1530497689298469bdbc104f7867b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  model: {fileID: 818310627}
-  junkDespawn: {fileID: 667502260}
-  junkSO: {fileID: 11400000, guid: 9c2f2c69bc3324543ba89b242dfe6ea2, type: 2}
+  itemDespawn: {fileID: 667502260}
 --- !u!1 &1533128963
 GameObject:
   m_ObjectHideFlags: 0
@@ -3190,12 +3204,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1761099253}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65cb0c8798ac00142ba4b39446d8ea51, type: 3}
+  m_Script: {fileID: 11500000, guid: ac1530497689298469bdbc104f7867b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  model: {fileID: 259913830}
-  junkDespawn: {fileID: 937566206}
-  junkSO: {fileID: 11400000, guid: 9c2f2c69bc3324543ba89b242dfe6ea2, type: 2}
+  itemDespawn: {fileID: 937566206}
 --- !u!1 &1815502547
 GameObject:
   m_ObjectHideFlags: 0

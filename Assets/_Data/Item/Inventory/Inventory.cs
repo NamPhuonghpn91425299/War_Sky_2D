@@ -20,6 +20,23 @@ public class Inventory : NamMonoBehaviour
         itemInventory.itemCount = newCount;
         return true;
     }
+    public virtual bool DeductItem(Itemcode itemcode, int addCount)
+    {
+        ItemInventory itemInventory = this.GetItemByCode(itemcode);
+        int newCount = itemInventory.itemCount - addCount;
+        if (newCount < 0) return false;
+        itemInventory.itemCount = newCount;
+        return true;
+    }
+    public virtual bool TryDeductItem(Itemcode itemcode, int addCount)
+    {
+        ItemInventory itemInventory = this.GetItemByCode(itemcode);
+        int newCount = itemInventory.itemCount - addCount;
+        if (newCount < 0) return false;
+        itemInventory.itemCount = newCount;
+        return true;
+    }
+
     public virtual ItemInventory GetItemByCode(Itemcode itemcode)
     {
         ItemInventory itemInventory = this.items.Find((item) => item.itemProfile.itemCode == itemcode);
